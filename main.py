@@ -1,16 +1,25 @@
 from fastapi import FastAPI
+from typing import Optional
+from pydantic import BaseModel
 
 app = FastAPI()
 
 @app.get('/')
 def index():
-    return {'data': 'blog list'}
+    return {'data': 'base directory'}
 
 @app.get('/about')
 def about():
     return {'About' : 'Blog app'}
 
-@app.get('/blog/{id}') #for dynami routing use /{} and need to accept this variable in the path operaton fuction
+@app.get('/blog')
+def index(limit: int, published: bool, sort: Optional[str] = None):
+    if published:
+        return {'data': f'blog list {published} blogs form the bd'}
+    else:
+        return {'data': 'all the blogs form db'}
+
+@app.get('/blog/{id}') 
 
 def show(id : int):
     #TODO: return blog with id = id
@@ -29,4 +38,14 @@ def comments(id: int):
 def unpublished():
     # return unpublished blog
     return {'data': 'all unpublished blogs'}
+
+
+class Blog(BaseModel):
+    title: str
+    body: str
+    publised: Optional[bool]
+
+@app.post('/blog')
+def create_blog(request: Blog):
+    return {'data': f"Blog is created wiht {request.title}"}  
 
