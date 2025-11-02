@@ -96,8 +96,10 @@ def unpublished():
 @app.get('/blog/unpublished')
 def unpublished():
     return {'data': 'all unpublished blogs'}
-    
+
 @app.get('/blog/{id}')
 def show(id:int):
     return {'data': id}
 ```
+
+N.B : Al lthe data validation is performed under the hood by Pydantic, so you will get all the bebefits form it. 
