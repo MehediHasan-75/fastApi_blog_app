@@ -14,7 +14,7 @@
 
 
 
-** Seturp **
+**Setup**
 ```
 mkdir project_name
 cd project_name
@@ -24,7 +24,7 @@ pip install fastapi
 pip install uvicorn
 ```
 
-** create main.py **
+**Create main.py**
 ```python
 from fastapi import FastAPI
 
@@ -35,7 +35,7 @@ def index():
     return "hey"
 ```
 
-** Run **
+**Run**
 ```
 uvicorn main:app --reload
 ```
@@ -61,5 +61,28 @@ def index():
 - Instnace
 - Function
 - Decoreate
+
+
+**Setup Git**
+```
+git init
+.gitignore
+```
+- Add inside it 
+```
+__pychache__
+.env
+.DS_Store
+```
+
+- and then
+```
+git add .
+git commit -m "feat: simpleast api"
+```
+
+
+
+
 
 
