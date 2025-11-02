@@ -1,4 +1,4 @@
-- fastapi provides auto docs with swagger ui and recod ui(/docs and /recods)
+- fastapi provides auto docs with swagger ui and redocs ui(/docs and /redocs)
 - python3.6 with type hints using Pydantic 
 - based on an open standard:
   - Json schema: By refaults supporst return json
@@ -43,7 +43,7 @@ uvicorn main:app --reload
 - So, we need to define path function
 
 ** Add decorator for defining path function **
-``python
+```python
 from fastapi import FastAPI
 
 //creating instance
