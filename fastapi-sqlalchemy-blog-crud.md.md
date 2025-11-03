@@ -12,14 +12,14 @@
 * Create a new directory named `blog`. Inside this, create `__init__.py` to consider the folder as a Python module. *(So, what is a Python module? It’s a file or package that Python can import.)*
 * Create a `main.py` inside `blog`
 
-```python
+```python 
 # blog/main.py
 from fastapi import FastAPI
 from pydantic import BaseModel
 
 app = FastAPI()
 
-class Blog(BaseModel):
+class Blog(BaseModel): 
     title: str
     body: str
 
